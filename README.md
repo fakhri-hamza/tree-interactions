@@ -30,7 +30,7 @@ They are scored on **synthetic data with planted interactions** (so the right an
 
 What the numbers say:
 
-1. **The H-statistic found every planted pair (40/40 runs) and stayed near 0 when there was nothing to find.** Its scale is meaningful: an H² of 0.2 is a real interaction, 0.005 is noise.
+1. **The H-statistic found every planted pair (30/30 runs with interactions) and stayed near 0 when there was nothing to find.** Its scale is meaningful: an H² of 0.2 is a real interaction, 0.005 is noise.
 2. **Tree-path counting confuses "split one after the other" with "interact".** A depth-3 tree that needs x2 and x5 additively still splits x5 below x2, so additive pairs score as high as real ones: on a model with no interaction at all, its top pair still gets 0.17 to 0.20. It failed completely on the threshold interaction.
 3. **Normalising by split frequency (lift) did not fix it** (recall 0.4 to 0.9), so the cheap structural score is a hint for where to look, not an answer. The cost gap is real though: about 1.5 s per model for H (n = 120 rows) vs under 0.1 s for paths.
 
